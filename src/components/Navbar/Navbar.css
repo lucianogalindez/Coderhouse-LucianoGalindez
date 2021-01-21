@@ -1,0 +1,111 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: black;
+    height: 3rem;
+    align-items: center;
+}
+
+.navbar__logo {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+}
+
+.navbar__logo > a {
+    color: rgb(235, 154, 3);
+    font-weight: bold;
+    transition: all 0.2s ease-in;
+}
+
+.navbar__logo > a:hover {
+    color: white;
+}
+
+.navbar__options > ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+}
+
+.navbar__option {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__option > a {
+    color: rgb(235, 154, 3);
+    font-family: Roboto;
+    transition: all 0.2s ease-in;
+}
+
+.navbar__option > a:hover {
+    color: white;
+}
+
+/*Menu Oculto*/
+
+.navbar__burger {
+    color: rgb(235, 154, 3);
+    display: none;
+}
+
+.navbar__hiddenOptions {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in;
+    z-index: -100;
+}
+
+.navbar__showOptions {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s ease-in;
+    z-index: -100;
+}
+
+.navbar__hiddenOptionsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 10rem;
+    background-color: rgb(102, 102, 102);
+    border-radius: 10px;
+    border-bottom: 1px solid rgb(235, 154, 3);
+}
+
+.navbar__hiddenOption {
+    padding: 1.5rem;
+    border-top: 1px solid rgb(196, 127, 0);
+    width: 100%;
+    text-align: center;
+    transition: all 0.2s ease-in;
+}
+
+.navbar__hiddenOption:hover {
+    background-color: orange;
+}
+
+.navbar__hiddenOption > a {
+    color: black;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 526px) {
+
+    .navbar__options {
+        display: none;
+    }
+
+    .navbar__burger {
+        display: block;
+        cursor: pointer;
+    }
+
+}
