@@ -1,10 +1,14 @@
 .navbar {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 0.5rem;
-    background-color: black;
-    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.205);
+    height: 6rem;
+    width: 100%;
     align-items: center;
+    position: fixed;
+    z-index: 10;
 }
 
 .navbar__logo {
@@ -13,13 +17,13 @@
 }
 
 .navbar__logo > a {
-    color: rgb(235, 154, 3);
+    color: rgb(187, 69, 14);
     font-weight: bold;
     transition: all 0.2s ease-in;
 }
 
 .navbar__logo > a:hover {
-    color: white;
+    color: black;
 }
 
 .navbar__options > ul {
@@ -29,67 +33,70 @@
 }
 
 .navbar__option {
-    padding-left: 1rem;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
 }
 
 .navbar__option > a {
-    color: rgb(235, 154, 3);
+    color: rgb(187, 69, 14);
     font-family: Roboto;
+    font-weight: bold;
     transition: all 0.2s ease-in;
 }
 
 .navbar__option > a:hover {
-    color: white;
+    color: black;
 }
 
 /*Menu Oculto*/
 
 .navbar__burger {
-    color: rgb(235, 154, 3);
+    color: rgb(187, 69, 14);
     display: none;
 }
 
 .navbar__hiddenOptions {
     position: absolute;
-    top: 3rem;
+    top: 6rem;
     left: 0;
     width: 100%;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     transition: all 0.5s ease-in;
     z-index: -100;
 }
 
 .navbar__showOptions {
     position: absolute;
-    top: 3rem;
+    top: 6rem;
     left: 0;
     width: 100%;
     transition: all 0.5s ease-in;
     z-index: -100;
+    opacity: 80%;
 }
 
 .navbar__hiddenOptionsList {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
     align-items: center;
-    min-height: 10rem;
+    /*min-height: 10rem;*/
     background-color: rgb(102, 102, 102);
     border-radius: 10px;
-    border-bottom: 1px solid rgb(235, 154, 3);
+    border-bottom: 1px solid rgb(187, 69, 14);
 }
 
 .navbar__hiddenOption {
-    padding: 1.5rem;
-    border-top: 1px solid rgb(196, 127, 0);
+    padding: 1rem 0.7rem;
+    height: 3.3rem;
+    border-top: 1px solid rgb(187, 69, 14);
     width: 100%;
     text-align: center;
     transition: all 0.2s ease-in;
 }
 
 .navbar__hiddenOption:hover {
-    background-color: orange;
+    background-color: rgb(187, 69, 14);
 }
 
 .navbar__hiddenOption > a {
