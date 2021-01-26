@@ -63,7 +63,6 @@
     width: 100%;
     transform: translateX(100%);
     transition: all 0.5s ease-in;
-    z-index: -100;
 }
 
 .navbar__showOptions {
@@ -72,8 +71,6 @@
     left: 0;
     width: 100%;
     transition: all 0.5s ease-in;
-    z-index: -100;
-    opacity: 80%;
 }
 
 .navbar__hiddenOptionsList {
@@ -81,7 +78,7 @@
     /*flex-direction: column;*/
     align-items: center;
     /*min-height: 10rem;*/
-    background-color: rgb(102, 102, 102);
+    background-color: rgba(102, 102, 102, 0.397);
     border-radius: 10px;
     border-bottom: 1px solid rgb(187, 69, 14);
 }

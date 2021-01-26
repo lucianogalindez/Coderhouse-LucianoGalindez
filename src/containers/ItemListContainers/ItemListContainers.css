@@ -10,13 +10,15 @@
     right: 0;
     mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.32));
     z-index: -10;
+    min-height: 30rem;
 }
 
 .itemList {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 30rem;
 }
 
 .itemList__intro {
