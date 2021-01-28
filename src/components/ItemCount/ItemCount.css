@@ -1,0 +1,75 @@
+.itemCount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemCount__addCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem
+}
+
+.itemCount__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid rgb(187, 69, 14);
+    width: 80%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.itemCount__stock {
+    margin-bottom: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.itemCount__item {
+    display: flex;
+    justify-content: center;
+}
+
+.itemCount__item > div {
+    width: 10rem;
+    border: 1px solid rgb(187, 69, 14);
+    margin: 0 1rem;
+    border-radius: 999px;
+    padding: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemCount__buttom {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    width: 10rem;
+}
+
+.itemCount__buttom > button {
+    padding: 0.7rem;
+    border-radius: 100px;
+    background-color: rgba(167, 89, 89, 0.548);
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.2s ease-in;
+    outline: none;
+}
+
+.itemCount__buttom-active:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.itemCount__buttom > button:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+

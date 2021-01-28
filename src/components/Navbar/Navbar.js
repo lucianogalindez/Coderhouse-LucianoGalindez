@@ -4,7 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close';
 import CartWidget from '../CartWidget/CartWidget'
 
-const Navbar = ({numItem}) => {
+const Navbar = () => {
 
     const [open, setOpen] = useState(false)
 
@@ -21,7 +21,6 @@ const Navbar = ({numItem}) => {
                     <li className='navbar__option'>
                         <a href='#productos'>
                             <CartWidget/>
-                            {numItem > 0 &&  (<span>{numItem}</span>)}
                         </a>
                     </li>
                     <li className='navbar__option'><a href='#login'>Ingresar</a></li>
@@ -36,7 +35,6 @@ const Navbar = ({numItem}) => {
                     <li className='navbar__hiddenOption'>
                         <a href='#productos'>
                             <CartWidget/>
-                            {numItem > 0 &&  (<span>{numItem}</span>)}
                         </a>
                     </li>
                     <li className='navbar__hiddenOption'><a href='#login'>Ingresar</a></li>
