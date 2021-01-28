@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.205);
+    /*background-color: rgba(0, 0, 0, 0.205);*/
+    background-color: rgb(224, 224, 224);
     height: 6rem;
     width: 100%;
     align-items: center;
@@ -43,6 +44,16 @@
     font-family: Roboto;
     font-weight: bold;
     transition: all 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__option > a > span {
+    background-color: rgb(187, 69, 14);
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+    color: white;
 }
 
 .navbar__option > a:hover {
@@ -66,6 +77,7 @@
 }
 
 .navbar__showOptions {
+    display: none;
     position: absolute;
     top: 6rem;
     left: 0;
@@ -78,7 +90,8 @@
     /*flex-direction: column;*/
     align-items: center;
     /*min-height: 10rem;*/
-    background-color: rgba(102, 102, 102, 0.397);
+    /*background-color: rgba(102, 102, 102, 0.397);*/
+    background-color: rgb(224, 224, 224);
     border-radius: 10px;
     border-bottom: 1px solid rgb(187, 69, 14);
 }
@@ -99,6 +112,17 @@
 .navbar__hiddenOption > a {
     color: black;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__hiddenOption > a > span {
+    background-color: white;
+    border-radius: 999px;
+    padding: 0.1rem 0.4rem;
+    color: black;
+    margin-top: -4px;
 }
 
 @media screen and (max-width: 526px) {
@@ -110,6 +134,10 @@
     .navbar__burger {
         display: block;
         cursor: pointer;
+    }
+
+    .navbar__showOptions {
+        display: block;
     }
 
 }
