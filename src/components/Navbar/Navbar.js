@@ -12,7 +12,7 @@ const Navbar = () => {
         <navbar className='navbar' id='navbar'>
 
             <div className='navbar__logo'>
-                <a href='#navbar'>Animate</a>
+                <a href='#itemListContainer'>Animate</a>
             </div>
 
             <div className='navbar__options'>

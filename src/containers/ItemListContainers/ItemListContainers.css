@@ -13,7 +13,7 @@
     min-height: 30rem;
 }
 
-.itemList {
+.itemListContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
     min-height: 30rem;
 }
 
-.itemList__intro {
+.itemListContainer__intro {
     width: 90%;
     max-width: 19rem;
     height: 12rem;
@@ -33,7 +33,7 @@
     align-items: center;
 }
 
-.itemList__intro > h1 {
+.itemListContainer__intro > h1 {
     text-align: center;
     font-family: 'Indie Flower', cursive;
     font-size: 2.4rem;
@@ -41,7 +41,7 @@
     font-weight: bold;
 }
 
-.itemList__intro > button {
+.itemListContainer__intro > a > button {
     padding: 0.7rem;
     border-radius: 100px;
     background-color: rgba(167, 89, 89, 0.548);
@@ -52,7 +52,7 @@
     transition: all 0.2s ease-in;
 }
 
-.itemList__intro > button:hover {
+.itemListContainer__intro > a > button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
 }

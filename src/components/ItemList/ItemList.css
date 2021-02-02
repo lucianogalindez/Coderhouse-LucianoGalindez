@@ -1,0 +1,30 @@
+.itemList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.itemList > h1 {
+    margin-bottom: 1.5rem;
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;    
+}
+
+.itemList__products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;   
+}
+
+@media screen and (max-width: 375px) {
+
+    .itemList > h1 {
+        font-size: 2.1rem;
+    }
+
+}
