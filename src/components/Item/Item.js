@@ -3,8 +3,6 @@ import './Item.css'
 
 const Item = ({product}) => {
 
-    console.log(product)
-
     return (
         <div className='item'>
             <img src={product.image} alt={product.description}/>

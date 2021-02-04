@@ -1,0 +1,139 @@
+.itemDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.itemDetail__loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.itemDetail__image {
+    flex: 2 1 27rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.itemDetail__image > img {
+    width: 100%;
+}
+
+.itemDetail__info {
+    flex: 1 1 20rem;
+    border-left: 0.5px solid rgba(116, 116, 116, 0.274);
+    padding: 0.5rem;
+    margin-right: 0.2rem;
+    padding-left: 1.5rem;
+}
+
+.itemDetail__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itemDetail__description > h2 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    border-bottom: 2rem;
+}
+
+.itemDetail__price {
+    color: rgba(94, 94, 94, 0.979);
+    font-size: 1.2rem;
+}
+
+.itemDetail__descriptionItem {
+    margin: 1rem 0;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+    padding-right: 2rem;
+}
+
+.itemDetail__stock {
+    display: flex;
+    align-items: center;
+}
+
+
+.itemDetail__stockSelect > select {
+    padding: 0.3rem;
+    border-radius: 100px;
+    cursor: pointer;
+    outline: none;
+    margin: 0 1rem;
+    background-color: transparent;
+    transition: transform 0.2s ease-in;
+}
+
+.itemDetail__stockSelect > select:hover {
+    transform: scale(1.2);
+}
+
+.itemDetail__stock > select > option {
+    background-color: transparent;
+}
+
+.itemDetail__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.itemDetail__cart {
+    padding: 0.7rem;
+    border-radius: 100px;
+    background-color: rgba(231, 60, 60, 0.644);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.2s ease-in;
+    outline: none;
+    width: 100%;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    margin: 1rem 0;
+}
+
+.itemDetail__buy {
+    padding: 0.7rem;
+    border-radius: 100px;
+    background-color: rgba(236, 126, 53, 0.856);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.2s ease-in;
+    outline: none;
+    width: 100%;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    margin: 1rem 0;
+}
+
+.itemDetail__buttons > button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border: 1px solid gray;
+}
+
+@media screen and (max-width: 767px) {
+
+    .itemDetail__info {
+        border-left: none;
+        border-top: 0.5px solid rgba(88, 88, 88, 0.199);
+        margin: 0 0;
+        padding-left: 1rem;
+    }
+
+}
