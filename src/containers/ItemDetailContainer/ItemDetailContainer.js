@@ -1,22 +1,27 @@
+/* eslint-disable eqeqeq */
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
 
-const getItems = () => {    
-    return new Promise((resolve, reject) => {
-        resolve({
-            id: 1,
-            title: 'Notebook Asus',
-            description: 'Esta notebook Asus ZenBook rompera todas las expectativas que puedas tener. Con su procesador Ryzen 5 contaras con todas las facilidades posibles cuando se trata de rendimiento. Asimismo, su potente tarjeta grafica integrada te permitira disfrutar de los ultimos juegos del mercado sin problemas',
-            price: 80000,
-            image: './images/notebook.jpeg',
-            stockItem: 5
-        })
-    })
-}
-
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({products}) => {
 
     const [product, setProduct] = useState({})
+
+    const {id} = useParams()
+
+    useEffect(() => {
+
+        const producto = products?.filter((product) => {
+            return product.id == id //de esta manera no importa que uno sea un string y el otro un entero. el doble igual solo toma el valor atras del tipo de variable
+        })
+
+        setProduct(producto[0])
+
+    
+    }, [id, products])
+
+
+    /*const [product, setProduct] = useState({})
     
     useEffect(() => {
         
@@ -28,7 +33,9 @@ const ItemDetailContainer = () => {
         return () => {
         }
 
-    }, [])
+    }, [])*/
+
+    
 
     return (
         <div>

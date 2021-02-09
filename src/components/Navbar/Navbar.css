@@ -15,12 +15,14 @@
 .navbar__logo {
     font-family: 'Indie Flower', cursive;
     font-size: 2rem;
-}
-
-.navbar__logo > a {
     color: rgb(187, 69, 14);
     font-weight: bold;
     transition: all 0.2s ease-in;
+}
+
+.navbar__logo:hover {
+    transform: scale(1.09);
+    opacity: 1;
 }
 
 .navbar__logo > a:hover {
@@ -31,6 +33,7 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 0.5rem;
+    align-items: center;
 }
 
 .navbar__option {
@@ -39,7 +42,7 @@
     align-items: center;
 }
 
-.navbar__option > a {
+.navbar__option > span {
     color: rgb(187, 69, 14);
     font-family: Roboto;
     font-weight: bold;
@@ -49,15 +52,8 @@
     align-items: center;
 }
 
-.navbar__option > a > span {
-    background-color: rgb(187, 69, 14);
-    border-radius: 999px;
-    padding: 0.1rem 0.5rem;
-    color: white;
-}
-
-.navbar__option > a:hover {
-    color: black;
+.navbar__option > span:hover {
+    color: black
 }
 
 /*Menu Oculto*/
@@ -89,27 +85,35 @@
     display: flex;
     /*flex-direction: column;*/
     align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgb(187, 69, 14);
     /*min-height: 10rem;*/
     /*background-color: rgba(102, 102, 102, 0.397);*/
     background-color: rgb(224, 224, 224);
     border-radius: 10px;
     border-bottom: 1px solid rgb(187, 69, 14);
+    flex: 1;
 }
+
+.navbar__hiddenOptionsList > a {
+    flex: 1;
+}
+
 
 .navbar__hiddenOption {
     padding: 1rem 0.7rem;
     height: 3.3rem;
-    border-top: 1px solid rgb(187, 69, 14);
     width: 100%;
     text-align: center;
     transition: all 0.2s ease-in;
+    margin-bottom: -1px;
 }
 
 .navbar__hiddenOption:hover {
-    background-color: rgb(187, 69, 14);
+    background-color: rgba(187, 69, 14, 0.705);
 }
 
-.navbar__hiddenOption > a {
+.navbar__hiddenOption > span {
     color: black;
     font-weight: bold;
     display: flex;
@@ -117,13 +121,6 @@
     align-items: center;
 }
 
-.navbar__hiddenOption > a > span {
-    background-color: white;
-    border-radius: 999px;
-    padding: 0.1rem 0.4rem;
-    color: black;
-    margin-top: -4px;
-}
 
 @media screen and (max-width: 526px) {
 

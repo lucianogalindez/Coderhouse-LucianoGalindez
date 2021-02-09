@@ -3,7 +3,7 @@ import React/*, { useState }*/ from 'react'
 import ItemList from '../../components/ItemList/ItemList'
 import './ItemListContainers.css'
 
-const ItemListContainers = ({greeting}) => {
+const ItemListContainers = ({greeting, products}) => {
 
     /*const [stock, setStock] = useState(10)
 
@@ -11,7 +11,7 @@ const ItemListContainers = ({greeting}) => {
         setStock(prev => prev - amount)
     }*/
 
-    const products = [
+    /*const products = [
         {
             id: 1,
             description: 'Notebook Asus',
@@ -40,7 +40,7 @@ const ItemListContainers = ({greeting}) => {
 
     const getProducts = new Promise((resolve, reject) => {
         resolve(products)
-    })
+    })*/
 
     //https://api.mercadolibre.com/products/search?status=active&site_id=MLA&q=Samsung&limit=5000
     //jira
@@ -57,7 +57,7 @@ const ItemListContainers = ({greeting}) => {
             </div>
         </div>
         {/*<ItemCount stock={stock} initial={1} onAdd={onAdd}/>*/}
-        <ItemList getProducts={getProducts}/>
+        <ItemList products={products}/>
         </>
         )
 }

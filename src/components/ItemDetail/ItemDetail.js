@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ItemDetail.css'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
@@ -6,20 +6,27 @@ const ItemDetail = ({product}) => {
 
     const [qty, setQty] = useState(1)
 
+    useEffect(() => {
+        
+        window.scroll(0, 0)
+
+    }, [])
+
+
     return (
         <div className='itemDetail'>
 
-        {product.stockItem===undefined ? <div className='itemDetail__loading'><CircularProgress/></div> : 
+        {product?.stockItem===undefined ? <div className='itemDetail__loading'><CircularProgress/></div> : 
 
             (<>
             <div className='itemDetail__image'>
-                <img src={product.image} alt={product.title} />
-            </div>
+                <img src={product?.image} alt={product?.title} />
+            </div>  
             <div className='itemDetail__info'>
                 <div className='itemDetail__description'>
-                    <h2>{product.title}</h2>
-                    <p className='itemDetail__price'>$ {product.price}</p>
-                    <p className='itemDetail__descriptionItem'>{product.description}</p>
+                    <h2>{product?.title}</h2>
+                    <p className='itemDetail__price'>$ {product?.price}</p>
+                    <p className='itemDetail__descriptionItem'>{product?.description}</p>
                 </div>
                 <div className='itemDetail__options'>
                     <div className='itemDetail__stock'>
