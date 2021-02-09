@@ -83,7 +83,7 @@
 
 .navbar__hiddenOptionsList {
     display: flex;
-    /*flex-direction: column;*/
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-top: 1px solid rgb(187, 69, 14);
@@ -96,7 +96,7 @@
 }
 
 .navbar__hiddenOptionsList > a {
-    flex: 1;
+    width: 100%;
 }
 
 
@@ -120,7 +120,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 @media screen and (max-width: 526px) {
 

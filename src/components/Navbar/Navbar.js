@@ -12,9 +12,14 @@ const Navbar = () => {
 
     //const {categoryId} = useParams()
 
+    const handlerOpen = () => {
+        setOpen(prev => !prev)
+    }
+
     return (
         <navbar className='navbar' id='navbar'>
 
+            
             <Link to='/'>
                 <div className='navbar__logo'>
                     Animate
@@ -24,9 +29,15 @@ const Navbar = () => {
             <div className='navbar__options'>
                 <ul className='navbar__optionsList'>
 
-                    <Link>
+                    <Link to='/category/notebooks'>
                         <li className='navbar__option'>
-                            <span>Productos</span>
+                            <span>Notebooks</span>
+                        </li>
+                    </Link>
+
+                    <Link to='/category/tvs'>
+                        <li className='navbar__option'>
+                            <span>TVs</span>
                         </li>
                     </Link>
 
@@ -38,25 +49,39 @@ const Navbar = () => {
                         </li>
                     </Link>
                     
-                    <Link>
+                    <Link to='/category/parlantes'>
                         <li className='navbar__option'>
-                            <span>Ingresar</span>
+                            <span>Parlantes</span>
+                        </li>
+                    </Link>
+
+                    <Link to='/category/juegos'>
+                        <li className='navbar__option'>
+                            <span>Games</span>
                         </li>
                     </Link>
                 </ul>
             </div>
 
-            <div className='navbar__burger' onClick={() => setOpen(prev => !prev)}>{!open ? <MenuIcon/> : <CloseIcon/>} </div>
+            <div className='navbar__burger' onClick={handlerOpen}>
+                {!open ? <MenuIcon/> : <CloseIcon/>} 
+            </div>
 
             <div className={ open ? 'navbar__showOptions' : 'navbar__hiddenOptions'}>
                 <ul className='navbar__hiddenOptionsList'>
-                    <Link>
+                    <Link to='/category/notebooks' onClick={handlerOpen}>
                         <li className='navbar__hiddenOption'>
-                            <span>Productos</span>
+                            <span>Notebooks</span>
                         </li>
                     </Link>
 
-                    <Link>
+                    <Link to='/category/tvs' onClick={handlerOpen}>
+                        <li className='navbar__hiddenOption'>
+                            <span>Tvs</span>
+                        </li>
+                    </Link>
+
+                    <Link onClick={handlerOpen}>
                         <li className='navbar__hiddenOption'>
                             <span>
                                 <CartWidget/>
@@ -64,9 +89,15 @@ const Navbar = () => {
                         </li>
                     </Link>
 
-                    <Link>
+                    <Link to='/category/parlantes' onClick={handlerOpen}>
                         <li className='navbar__hiddenOption'>
-                            <span>Ingresar</span>
+                            <span>Parlantes</span>
+                        </li>
+                    </Link>
+
+                    <Link to='/category/juegos' onClick={handlerOpen}>
+                        <li className='navbar__hiddenOption'>
+                            <span>Juegos</span>
                         </li>
                     </Link>
                 </ul>

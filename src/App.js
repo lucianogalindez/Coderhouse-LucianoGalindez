@@ -42,6 +42,10 @@ function App() {
             <ItemDetailContainer products={products}/>
           </Route>
 
+          <Route exact path='/category/:category'>
+            <ItemListContainer greeting products={products}/>
+          </Route>          
+
         </Switch>
       </BrowserRouter>
 
