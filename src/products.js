@@ -52,7 +52,35 @@ const products = [
         stockItem: 8,
         description: "Descubre la historia arácnida completa con Marvel's Spider-Man: Miles Morales Edición Definitiva. Este paquete imperdible incluye Marvel's Spider-Man Remasterizado, el galardonado juego completo, con los tres capítulos de contenido descargable de la aventura Marvel's Spider-Man",
         category: 'juegos'
+    },
+    {
+        id: 7,
+        title: "Apple Mac Air",
+        price: 152999,
+        image: '/images/mac.jpg',
+        stockItem: 2,
+        description: "Disfruta de la ultima tecnologia en un producto completamente VIP. Nunca podras volver a usar otra notebook luego de hacerte con esta Mac Air",
+        category: 'notebooks'
+    },
+    {
+        id: 8,
+        title: "Parlante Sony",
+        price: 39599,
+        image: '/images/sony.jpg',
+        stockItem: 15,
+        description: "Parlante Bluetooth Sony MHC-V02. Gracias al Jet Bass Booster permite que la música suene más potente llevando el sonido de graves a larga distancia.",
+        category: 'parlantes'
+    },
+    {
+        id: 9,
+        title: "Parlante Sony",
+        price: 69999,
+        image: '/images/tvcurvo.jpg',
+        stockItem: 10,
+        description: "Un peldaño por debajo de la serie QLED de 2017, se sitúa el Samsung MU9005, un televisor con excelentes prestaciones para quien busque un televisor completo pero a un precio contenido",
+        category: 'tvs'
     }
+
 ]
 
 export default products

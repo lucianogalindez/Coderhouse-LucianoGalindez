@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close';
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
 
     const [open, setOpen] = useState(false)
+    const [show, setShow] = useState(false)
 
     //const {categoryId} = useParams()
 
@@ -16,8 +17,24 @@ const Navbar = () => {
         setOpen(prev => !prev)
     }
 
+    const transitionNavbar = () => {
+        if (window.scrollY > 100) {
+            setShow(true)
+        } else {
+            setShow(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', transitionNavbar)
+
+        return () => {
+            window.removeEventListener('scroll', transitionNavbar)
+        }
+    })
+
     return (
-        <navbar className='navbar' id='navbar'>
+        <navbar className={show ? 'navbar navbar__bg' : 'navbar'}  id='navbar'>
 
             
             <Link to='/'>
@@ -29,15 +46,15 @@ const Navbar = () => {
             <div className='navbar__options'>
                 <ul className='navbar__optionsList'>
 
-                    <Link to='/category/notebooks'>
-                        <li className='navbar__option'>
-                            <span>Notebooks</span>
-                        </li>
-                    </Link>
-
                     <Link to='/category/tvs'>
                         <li className='navbar__option'>
                             <span>TVs</span>
+                        </li>
+                    </Link>
+
+                    <Link to='/category/notebooks'>
+                        <li className='navbar__option'>
+                            <span>Notebooks</span>
                         </li>
                     </Link>
 
@@ -57,7 +74,7 @@ const Navbar = () => {
 
                     <Link to='/category/juegos'>
                         <li className='navbar__option'>
-                            <span>Games</span>
+                            <span>Juegos</span>
                         </li>
                     </Link>
                 </ul>
