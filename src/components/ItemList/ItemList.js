@@ -11,6 +11,7 @@ const ItemList = ({products}) => {
     if (products[0]?.stockItem === undefined) {
         return (
             <div className='itemList__loading'>
+                <h2>Cargando Productos...</h2>
                 <CircularProgress />
             </div>
         )

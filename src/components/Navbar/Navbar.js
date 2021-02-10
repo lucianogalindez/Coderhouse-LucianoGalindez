@@ -18,7 +18,7 @@ const Navbar = () => {
     }
 
     const transitionNavbar = () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 30) {
             setShow(true)
         } else {
             setShow(false)
