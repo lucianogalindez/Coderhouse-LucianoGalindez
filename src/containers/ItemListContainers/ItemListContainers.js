@@ -55,7 +55,6 @@ const ItemListContainers = ({greeting}) => {
 
     }, [category, products])
 
-    
     return (
         <>
         <div className='itemList__bg'></div>

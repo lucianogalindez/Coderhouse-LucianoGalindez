@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import './ItemDetail.css'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({product}) => {
 
-    const [qty, setQty] = useState(1)
+    //const [qty, setQty] = useState(1)
+    const [initial, setInitial] = useState(1)
+    const [cart, setCart] = useState(true)
+    const [stock, setStock] = useState(0)
 
     useEffect(() => {
         
         window.scroll(0, 0)
+        setStock(product.stockItem)
 
-    }, [])
+    }, [product.stockItem])
+
+    console.log(cart)
 
 
     return (
@@ -30,21 +37,21 @@ const ItemDetail = ({product}) => {
                 </div>
                 <div className='itemDetail__options'>
                     <div className='itemDetail__stock'>
-                        <div className='itemDetail__stockTitle'>Stock: {product.stockItem}</div>
-                        <div className='itemDetail__stockSelect'>
-                            <select value={qty} onChange={e => setQty(e.target.value)}>
+                        
+                            {/*<select value={qty} onChange={e => setQty(e.target.value)}>
                                 {
                                     [...Array(product.stockItem).keys()].map(x => (
                                         <option key={x+1} value={x+1}>{x+1}</option>
                                     ))
                                 }
-                            </select>
-                        </div>
+                            </select>*/}
+                            <ItemCount stock={stock} setStock={setStock} setInitial={setInitial} initial={initial} setCart={setCart} cart={cart}/>
+                            
                     </div>
-                    <div className='itemDetail__buttons'>
+                    {/*<div className='itemDetail__buttons'>
                         <button className='primary itemDetail__cart'>Agregar al carrito</button>
                         <button className='itemDetail__buy'>Comprar</button>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
             </>)}

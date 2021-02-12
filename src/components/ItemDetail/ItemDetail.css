@@ -83,52 +83,11 @@
     background-color: transparent;
 }
 
-.itemDetail__buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 2rem 0;
+.itemDetail__options {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 
-.itemDetail__cart {
-    padding: 0.7rem;
-    border-radius: 100px;
-    background-color: rgba(231, 60, 60, 0.644);
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-    transition: all 0.2s ease-in;
-    outline: none;
-    width: 100%;
-    letter-spacing: 4px;
-    font-weight: bold;
-    font-family: 'Indie Flower', cursive;
-    margin: 1rem 0;
-}
-
-.itemDetail__buy {
-    padding: 0.7rem;
-    border-radius: 100px;
-    background-color: rgba(236, 126, 53, 0.856);
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-    transition: all 0.2s ease-in;
-    outline: none;
-    width: 100%;
-    letter-spacing: 4px;
-    font-weight: bold;
-    font-family: 'Indie Flower', cursive;
-    margin: 1rem 0;
-}
-
-.itemDetail__buttons > button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: black;
-    border: 1px solid gray;
-}
 
 @media screen and (max-width: 767px) {
 

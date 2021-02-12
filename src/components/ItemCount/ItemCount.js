@@ -1,53 +1,70 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ItemCount.css'
 
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import { Link } from 'react-router-dom';
 
 
 
-const ItemCount = ({stock, initial, onAdd}) => {
-
-    const [amount, setAmount] = useState(initial)
+const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart}) => {
 
     const addItem = () => {
-        setAmount(prev => prev + 1)
+        if (initial < stock) {
+            setInitial(prev => prev + 1)
+        }
     }
 
     const removeItem = () => {
-        if (amount > 0) {
-            setAmount(prev => prev - 1)
+        if (initial > 1) {
+            setInitial(prev => prev - 1)
         }
+    }
+
+    const onAdd = (amount) => {
+        setStock((stock - amount))
+        setCart(false)
     }
 
     return (
         <div className='itemCount'>
 
-            <div className='itemCount__title'>
-                <h1>Agregar Items</h1>
-            </div>
-
             <div className='itemCount__addCart'>
-                <div className='itemCount__stock'>
-                    <p>Es stock es de: {stock}</p>
+
+                <div>
+                    <p>Stock: {stock}</p>
                 </div>
+
+                {cart === true &&
+                (
                 <div className='itemCount__item'>
-
-                    <button onClick={addItem}><AddIcon/></button>
-
-                    <div><p>{amount}</p></div>
 
                     <button onClick={removeItem}><RemoveIcon/></button>
 
-                </div>
-                <div className='itemCount__buttom'>
-                    {
-                        amount > stock || amount === 0 ?
-                        <button disabled>Agregar al carrito</button> :
-                        <button className='itemCount__buttom-active' onClick={() => onAdd(amount)}>Agregar al carrito</button>
-                    }
-                </div>
+                    <div><p>{initial}</p></div>
+
+                    <button onClick={addItem}><AddIcon/></button>
+
+                </div> 
+                )
+                }
             </div>
+
+            <div className='itemCount__buttom'>
+                {
+                cart === true ?
+                
+                    <button className='itemCount__buttom-cart' onClick={() => onAdd(initial)}>Agregar al carrito</button>
+                
+                :
+                    
+                    <Link to='/cart'>
+                    <button className='itemCount__buttom-cart itemCount__buttom-buy'>Terminar Mi Compra ({initial})</button>
+                    </Link>
+    
+                }
+            </div>
+            
 
         </div>
     )
