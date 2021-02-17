@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 .itemList__loading {
@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
 .itemList__loading > h2 {

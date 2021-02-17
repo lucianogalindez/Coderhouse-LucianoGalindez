@@ -32,11 +32,11 @@ const ItemListContainers = ({greeting}) => {
 
     useEffect(() => {
         
-        window.scroll(0, 0)
-
         /*if (category !== undefined) {
             setProductsCategory(products.filter((product) => product.category === category))
         }*/
+
+        window.scroll(0, 0)
         
         if (category === undefined) {
 
@@ -53,7 +53,7 @@ const ItemListContainers = ({greeting}) => {
             }, 2000);
         }
 
-    }, [category, products])
+    }, [category])
 
     return (
         <>

@@ -3,6 +3,8 @@ import './App.css'
 import ItemListContainer from './containers/ItemListContainers/ItemListContainers'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Footer } from './components/Footer/Footer';
+import { CartContainer } from './containers/CartContainer/CartContainer';
 
 function App() {
   
@@ -22,9 +24,14 @@ function App() {
 
           <Route exact path='/category/:category'>
             <ItemListContainer greeting/>
-          </Route>          
+          </Route>   
+
+          <Route path='/cart'>
+            <CartContainer />
+          </Route>       
 
         </Switch>
+        <Footer />
       </BrowserRouter>
 
   );

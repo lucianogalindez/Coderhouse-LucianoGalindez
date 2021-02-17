@@ -17,9 +17,6 @@ const ItemDetail = ({product}) => {
 
     }, [product.stockItem])
 
-    console.log(cart)
-
-
     return (
         <div className='itemDetail'>
 

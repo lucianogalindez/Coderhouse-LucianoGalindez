@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu'
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@material-ui/icons/Close'
 import CartWidget from '../CartWidget/CartWidget'
 
 import { Link } from 'react-router-dom'

@@ -1,0 +1,39 @@
+.footer {
+    background-color: rgba(224, 224, 224, 0.877);
+    height: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    position: relative;
+}
+
+.footer__title {
+    font-size: 1.3rem;
+    font-weight: 300;
+    word-spacing: 3px;
+}
+
+.footer__reserved {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.footer__up {
+    position: absolute;
+    top: -1rem;
+    border-radius: 100px;
+    padding: 0.3rem;
+    cursor: pointer;
+    background-color: rgba(90, 90, 90, 0.822);
+    transition: all 0.2s ease-in;
+    color: white;
+}
+
+.footer__up:hover {
+    transform: scale(1.09);
+    background-color: rgba(224, 224, 224, 0.877);
+    color: black;
+    border: 1px solid black;
+}

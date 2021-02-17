@@ -3,8 +3,9 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 6rem;
+    margin-bottom: 3rem;
 }
 
 .itemDetail__loading {
@@ -64,25 +65,6 @@
     align-items: center;
 }
 
-
-.itemDetail__stockSelect > select {
-    padding: 0.3rem;
-    border-radius: 100px;
-    cursor: pointer;
-    outline: none;
-    margin: 0 1rem;
-    background-color: transparent;
-    transition: transform 0.2s ease-in;
-}
-
-.itemDetail__stockSelect > select:hover {
-    transform: scale(1.2);
-}
-
-.itemDetail__stock > select > option {
-    background-color: transparent;
-}
-
 .itemDetail__options {
     margin-bottom: 3rem;
     margin-top: 1rem;
@@ -95,7 +77,7 @@
         border-left: none;
         border-top: 0.5px solid rgba(88, 88, 88, 0.199);
         margin: 0 0;
-        padding-left: 1rem;
+        padding: 0 1rem;
     }
 
 }
