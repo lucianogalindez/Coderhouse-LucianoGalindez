@@ -63,18 +63,3 @@
     color: rgb(75, 75, 75);
     margin-bottom: 0.2rem;
 }
-
-.item__cart {
-    padding: 0.4rem;
-    border-radius: 100px;
-    position: absolute;
-    right: 0.2rem;
-    bottom: 0.2rem;
-    color: white;
-    background-color: rgb(85, 85, 85);
-    transition: all 0.2s ease-in;
-}
-
-.item__cart:hover {
-    background-color: rgba(94, 33, 33, 0.822);
-} 

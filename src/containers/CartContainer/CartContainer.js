@@ -1,10 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import './CartContainer.css'
 
 export const CartContainer = () => {
 
-    const {cart, removeItem} = useContext(CartContext)
+    const {cart, removeItem, clearCart} = useContext(CartContext)
+
+    useEffect(() => {
+
+        window.scroll(0, 0)
+
+    }, [])
 
     return (
         <div className='cartContainer'>
@@ -19,7 +26,7 @@ export const CartContainer = () => {
                             <img src={x.item.image} alt={x.item.title} />
                         </div>
 
-                        <h4>{x.item.title}</h4>
+                        <Link to={`/producto/${x.item.id}`}><h4>{x.item.title}</h4></Link>
 
                         <div className='cartContainer__productPrice'>
                             <p>$ {x.item.price}</p>
@@ -35,6 +42,7 @@ export const CartContainer = () => {
                 <div className='cartContainer__priceInfo'>
                     <h2>Subtotal ({cart.reduce((a,c) => a + 1 * c.qty, 0)} items) : $ {cart.reduce((a,c) => a + c.qty * c.item.price, 0)} </h2>
                     <button>Realizar Compra</button>
+                    <div className='cartContainer__clear'><button onClick={() => clearCart()}>Limpiar carrito</button></div>
                 </div>
 
             </div>

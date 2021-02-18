@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import CartWidget from '../CartWidget/CartWidget'
 
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
 const Navbar = () => {
 
     const [open, setOpen] = useState(false)
     const [show, setShow] = useState(false)
+
+    const {cart} = useContext(CartContext)
 
     //const {categoryId} = useParams()
 
@@ -58,10 +61,10 @@ const Navbar = () => {
                         </li>
                     </Link>
 
-                    <Link>
+                    <Link to='/cart'>
                         <li className='navbar__option'>
                             <span>
-                                <CartWidget/>
+                                <CartWidget/>{cart.length > 0 && (<span className='navbar__cartLength'>{cart.length}</span>)}
                             </span>
                         </li>
                     </Link>
@@ -98,10 +101,10 @@ const Navbar = () => {
                         </li>
                     </Link>
 
-                    <Link onClick={handlerOpen}>
+                    <Link to='/cart' onClick={handlerOpen}>
                         <li className='navbar__hiddenOption'>
                             <span>
-                                <CartWidget/>
+                                <CartWidget/>{cart.length > 0 && (<span className='navbar__cartLength'>{cart.length}</span>)}
                             </span>
                         </li>
                     </Link>

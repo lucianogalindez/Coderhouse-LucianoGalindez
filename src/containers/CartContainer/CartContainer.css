@@ -13,7 +13,7 @@
 
 .cartContainer__title {
     text-align: left;
-    margin-left: 3rem;
+    margin-left: 2rem;
     font-family: 'Indie Flower', cursive;
     font-size: 1.8rem;
     color: #111;
@@ -33,9 +33,10 @@
     border-bottom: 2rem;
 }
 
-.cartContainer__product > h4 {
+.cartContainer__product > a > h4 {
     width: 14rem;
     color: rgb(187, 69, 14);
+    text-decoration: none;
 }
 
 .cartContainer__productPrice {
@@ -87,10 +88,38 @@
     background-color: rgb(187, 69, 14);
     color: white;
     border: none;
+    transition: all 0.2s ease-in;
+}
+
+.cartContainer__priceInfo > button:hover {
+    background-color: rgb(160, 59, 12);
 }
 
 .cartContainer__priceInfo > h2 {
     margin-bottom: 1rem;
     font-weight: 400;
     font-size: 1.2rem;
+}
+
+.cartContainer__clear {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.cartContainer__clear > button {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: rgba(156, 71, 31, 0.473);
+    font-weight: 400;
+    color: white;
+    width: 40%;
+    outline: none;
+    transition: all 0.2s ease-in;
+}
+
+.cartContainer__clear > button:hover {
+    background-color: rgb(156, 153, 152);
 }

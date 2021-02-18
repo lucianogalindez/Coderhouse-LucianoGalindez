@@ -1,13 +1,7 @@
 import React from 'react'
 import './Item.css'
-import CartWidget from '../CartWidget/CartWidget'
 
 const Item = ({product}) => {
-
-    const addToCart = (e) => {
-        e.preventDefault()
-
-    }
 
     return (
         <div className='item'>
@@ -17,7 +11,6 @@ const Item = ({product}) => {
                 <h4>{product.title}</h4>
                 <p className='item__infoPrice'>$ {product.price}</p>
                 <p>Stock: <span>{product.stockItem}</span></p>
-                <div className='item__cart' onClick={addToCart}><CartWidget /></div>
 
             </div>
         </div>

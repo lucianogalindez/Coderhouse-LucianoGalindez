@@ -70,10 +70,17 @@ const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart, product
                     <button className='itemCount__buttom-cart' onClick={() => onAdd()}>Agregar al carrito</button>
                 
                 :
-                    
+                    <div className='itemCount__buyButtoms'>
+
                     <Link to='/cart'>
                     <button className='itemCount__buttom-cart itemCount__buttom-buy'>Terminar Mi Compra ({initial})</button>
                     </Link>
+
+                    <Link to='/'>
+                        <button className='itemCount__buttom-cart'>Seguir comprando</button>
+                    </Link>
+
+                    </div>
     
                 }
             </div>

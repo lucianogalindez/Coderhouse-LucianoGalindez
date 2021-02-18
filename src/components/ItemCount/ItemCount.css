@@ -84,3 +84,11 @@
     cursor: not-allowed;
 }
 
+.itemCount__buyButtoms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 7rem;
+    width: 100%;
+}
+
