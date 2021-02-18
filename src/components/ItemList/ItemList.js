@@ -7,6 +7,11 @@ import { CircularProgress } from '@material-ui/core'
 
 const ItemList = ({products}) => {
     
+    
+    /*const {cart, addItem} = useContext(CartContext)
+    
+    console.log(cart[0].item.id)*/
+
 
     if (products[0]?.stockItem === undefined) {
         return (

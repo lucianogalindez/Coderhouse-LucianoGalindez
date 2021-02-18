@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './ItemDetail.css'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import ItemCount from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/CartContext'
 
 const ItemDetail = ({product}) => {
 
     //const [qty, setQty] = useState(1)
     const [initial, setInitial] = useState(1)
-    const [cart, setCart] = useState(true)
+    const [inCart, setInCart] = useState(true)
     const [stock, setStock] = useState(0)
 
+    
+    const {addItem} = useContext(CartContext)
+    
     useEffect(() => {
         
         window.scroll(0, 0)
@@ -42,7 +46,7 @@ const ItemDetail = ({product}) => {
                                     ))
                                 }
                             </select>*/}
-                            <ItemCount stock={stock} setStock={setStock} setInitial={setInitial} initial={initial} setCart={setCart} cart={cart}/>
+                            <ItemCount stock={stock} setStock={setStock} setInitial={setInitial} initial={initial} setCart={setInCart} cart={inCart} product={product} addItem={addItem}/>
                             
                     </div>
                     {/*<div className='itemDetail__buttons'>

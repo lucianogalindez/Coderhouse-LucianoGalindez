@@ -22,6 +22,7 @@ const ItemDetailContainer = () => {
         setProduct(item[0])
     }
 
+
     useEffect(() => {
 
         /*const producto = products?.filter((product) => {

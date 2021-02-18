@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 
 
-const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart}) => {
+const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart, product, addItem}) => {
 
-    const addItem = () => {
+    const setItem = () => {
         if (initial < stock) {
             setInitial(prev => prev + 1)
         }
@@ -21,8 +21,21 @@ const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart}) => {
         }
     }
 
-    const onAdd = (amount) => {
-        setStock((stock - amount))
+    const onAdd = () => {
+        setStock((stock - initial))
+
+        const item = {
+            item: {
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                image: product.image
+            },
+            qty: initial
+        }
+
+        addItem(item)
+
         setCart(false)
     }
 
@@ -43,7 +56,7 @@ const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart}) => {
 
                     <div><p>{initial}</p></div>
 
-                    <button onClick={addItem}><AddIcon/></button>
+                    <button onClick={setItem}><AddIcon/></button>
 
                 </div> 
                 )
@@ -54,7 +67,7 @@ const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart}) => {
                 {
                 cart === true ?
                 
-                    <button className='itemCount__buttom-cart' onClick={() => onAdd(initial)}>Agregar al carrito</button>
+                    <button className='itemCount__buttom-cart' onClick={() => onAdd()}>Agregar al carrito</button>
                 
                 :
                     

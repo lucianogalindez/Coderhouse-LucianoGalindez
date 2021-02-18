@@ -1,4 +1,96 @@
 .cartContainer {
-    height: 100vh;
-    padding-top: 6rem
+    min-height: 100vh;
+    padding-top: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 4rem;
+}
+
+.cartContainer__info {
+    flex: 2 1 35rem
+}
+
+.cartContainer__title {
+    text-align: left;
+    margin-left: 3rem;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.8rem;
+    color: #111;
+}
+
+.cartContainer__product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.cartContainer__product > div > img {
+    max-width: 5rem;
+    width: 100%;
+    border-bottom: 2rem;
+}
+
+.cartContainer__product > h4 {
+    width: 14rem;
+    color: rgb(187, 69, 14);
+}
+
+.cartContainer__productPrice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.cartContainer__productPrice > p {
+    margin-right: 1rem;
+}
+
+.cartContainer__productPrice > button {
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    border: 0.1rem #a4a4a4 solid;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.cartContainer__price {
+    flex: 1 1 25rem;
+    justify-content: space-between;
+}
+
+.cartContainer__priceInfo {
+    border: 0.1rem #c0c0c0 solid;
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.cartContainer__priceInfo > button {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem #a4a4a4 solid;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    cursor: pointer;
+    background-color: rgb(187, 69, 14);
+    color: white;
+    border: none;
+}
+
+.cartContainer__priceInfo > h2 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size: 1.2rem;
 }

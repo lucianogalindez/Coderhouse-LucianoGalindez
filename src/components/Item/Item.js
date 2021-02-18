@@ -4,8 +4,9 @@ import CartWidget from '../CartWidget/CartWidget'
 
 const Item = ({product}) => {
 
-    const addItem = (e) => {
+    const addToCart = (e) => {
         e.preventDefault()
+
     }
 
     return (
@@ -16,7 +17,7 @@ const Item = ({product}) => {
                 <h4>{product.title}</h4>
                 <p className='item__infoPrice'>$ {product.price}</p>
                 <p>Stock: <span>{product.stockItem}</span></p>
-                <div className='item__cart' onClick={addItem}><CartWidget /></div>
+                <div className='item__cart' onClick={addToCart}><CartWidget /></div>
 
             </div>
         </div>
