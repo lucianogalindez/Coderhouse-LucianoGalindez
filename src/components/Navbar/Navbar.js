@@ -61,6 +61,8 @@ const Navbar = () => {
                         </li>
                     </Link>
 
+                    { cart.length > 0 && 
+                    (
                     <Link to='/cart'>
                         <li className='navbar__option'>
                             <span>
@@ -68,6 +70,8 @@ const Navbar = () => {
                             </span>
                         </li>
                     </Link>
+                    )
+                    }
                     
                     <Link to='/category/parlantes'>
                         <li className='navbar__option'>
@@ -101,6 +105,8 @@ const Navbar = () => {
                         </li>
                     </Link>
 
+                    { cart.length > 0 &&
+                    (
                     <Link to='/cart' onClick={handlerOpen}>
                         <li className='navbar__hiddenOption'>
                             <span>
@@ -108,6 +114,8 @@ const Navbar = () => {
                             </span>
                         </li>
                     </Link>
+                    )
+                    }
 
                     <Link to='/category/parlantes' onClick={handlerOpen}>
                         <li className='navbar__hiddenOption'>

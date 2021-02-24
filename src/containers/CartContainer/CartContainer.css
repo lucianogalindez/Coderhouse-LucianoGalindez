@@ -19,6 +19,18 @@
     color: #111;
 }
 
+.cartContainer__message {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartContainer__message > h3 {
+    padding: 2rem;
+    font-weight: 400;
+}
+
 .cartContainer__product {
     display: flex;
     flex-wrap: wrap;
