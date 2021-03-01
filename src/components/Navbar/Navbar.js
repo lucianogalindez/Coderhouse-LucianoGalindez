@@ -110,7 +110,7 @@ const Navbar = () => {
                     <Link to='/cart' onClick={handlerOpen}>
                         <li className='navbar__hiddenOption'>
                             <span>
-                                <CartWidget/>{cart.length > 0 && (<span className='navbar__cartLength'>{cart.length}</span>)}
+                                <CartWidget/>{cart.length > 0 && (<span className='navbar__cartLength'>{cart.reduce((a,c) => a + 1 * c.qty, 0)}</span>)}
                             </span>
                         </li>
                     </Link>

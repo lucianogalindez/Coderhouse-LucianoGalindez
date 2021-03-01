@@ -46,7 +46,7 @@ const products = [
     },
     {
         id: 6,
-        title: "Spiderman PS5 ",
+        title: "Spiderman PS5",
         price: 6999,
         image: '/images/spiderman.jpg',
         stockItem: 8,

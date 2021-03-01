@@ -26,7 +26,7 @@ const ItemCount = ({stock, setStock, initial, setInitial, cart, setCart, product
 
         const item = {
             item: {
-                id: product.id,
+                id: product.productId,
                 title: product.title,
                 price: product.price,
                 image: product.image
