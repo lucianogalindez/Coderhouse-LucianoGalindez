@@ -37,7 +37,7 @@ const Navbar = () => {
     })
 
     return (
-        <navbar className={show ? 'navbar navbar__bg' : 'navbar'}  id='navbar'>
+        <nav className={show ? 'navbar navbar__bg' : 'navbar'}  id='navbar'>
 
             
             <Link to='/'>
@@ -66,7 +66,7 @@ const Navbar = () => {
                     <Link to='/cart'>
                         <li className='navbar__option'>
                             <span>
-                                <CartWidget/>{cart.length > 0 && (<span className='navbar__cartLength'>{cart.length}</span>)}
+                                <CartWidget/>{cart.length > 0 && (<span className='navbar__cartLength'>{cart.reduce((a,c) => a + 1 * c.qty, 0)}</span>)}
                             </span>
                         </li>
                     </Link>
@@ -131,7 +131,7 @@ const Navbar = () => {
                 </ul>
             </div>
 
-        </navbar>
+        </nav>
     )
 }
 

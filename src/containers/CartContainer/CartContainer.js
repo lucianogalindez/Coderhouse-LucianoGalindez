@@ -13,8 +13,6 @@ export const CartContainer = () => {
 
     }, [])
 
-    console.log(cart.length)
-
     return (
         <div className='cartContainer'>
 
