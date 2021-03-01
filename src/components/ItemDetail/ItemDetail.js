@@ -13,6 +13,8 @@ const ItemDetail = ({product}) => {
 
     
     const {addItem} = useContext(CartContext)
+
+
     
     useEffect(() => {
         

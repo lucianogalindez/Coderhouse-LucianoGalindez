@@ -14,7 +14,7 @@ const products = [
         price: 20000,
         image: '/images/pantalla.jpg',
         stockItem: 3,
-        description: 'Pantalla con toda la ultima tecnologia disponible en el mercado. Disfruta de las mejores peliculas y series es un fabulosa calidad 4K',
+        description: '  ',
         category: 'tvs'
     },
     {

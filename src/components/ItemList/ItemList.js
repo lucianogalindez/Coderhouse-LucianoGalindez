@@ -30,7 +30,7 @@ const ItemList = ({products}) => {
                     { 
                         products ?
                         products.map((product) => (
-                            <Link to={`/producto/${product.id}`} key={product.id}>
+                            <Link to={`/producto/${product.productId}`} key={product.id}>
                                 <Item product={product} />
                             </Link>
                         )) :
