@@ -87,7 +87,7 @@
     padding: 1rem;
 }
 
-.cartContainer__priceInfo > button {
+.cartContainer__userInfo > div > button {
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: 0.1rem #a4a4a4 solid;
@@ -101,6 +101,7 @@
     color: white;
     border: none;
     transition: all 0.2s ease-in;
+    margin-top: 1rem;
 }
 
 .cartContainer__priceInfo > button:hover {
@@ -119,7 +120,7 @@
     margin-top: 1rem;
 }
 
-.cartContainer__clear > button {
+.cartContainer__clearButton {
     padding: 0.4rem;
     border: none;
     border-radius: 0.5rem;
@@ -132,6 +133,45 @@
     transition: all 0.2s ease-in;
 }
 
-.cartContainer__clear > button:hover {
+.cartContainer__clearButton:hover {
     background-color: rgb(156, 153, 152);
+}
+
+.cartContainer__continueButton {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: green;
+    font-weight: 400;
+    outline: none;
+    color: white;
+}
+
+.cartContainer__userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 10   0%;
+}
+
+.cartContainer__userInfo > h3 {
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+}
+
+.cartContainer__userInfo > div > input {
+    width: 80%;
+    padding: 0.4rem;
+    margin: 0.2rem;
+    outline: none;
+    background-color: white;
+    border-radius: 99px;
+    border: 0.2px solid gray;
+}
+
+.cartContainer__confirm {
+    padding: 0.2rem;
+    margin-bottom: 1rem;    
 }
