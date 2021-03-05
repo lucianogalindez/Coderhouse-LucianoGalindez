@@ -11,11 +11,44 @@ export const CartContainer = () => {
     const [lastName, setLastName] = useState('')
     const [phone, setPhone] = useState('')
     const [orderId, setOrderId] = useState('')
-
+    const [mpUrl ,setMpUrl] = useState('')
+ 
     const {cart, removeItem, clearCart} = useContext(CartContext)
+
+    const pagarMP = (products) => {
+        return fetch('https://api.mercadopago.com/checkout/preferences', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer TEST-959807999894080-090620-44560d8f0723d4a8d1895a07ceb383db-2875546'
+            },
+            body: JSON.stringify({
+                items: products/*[
+                    {
+                    title: "Dummy Item",
+                    description: "Multicolor Item",
+                    quantity: 1,
+                    currency_id: "ARS",
+                    unit_price: 10.0
+                    }
+                ]*/
+            })
+        })
+    }
 
     const createOrder = async (e) => {
         e.preventDefault()
+
+        let pago = cart.map(x => {
+            return {
+                title: x.item.title,
+                quantity: x.qty,
+                currency_id: "ARS",
+                unit_price: x.item.price
+            }
+        })
+
+        console.log(pago)
 
         let buyer = {
             name: name,
@@ -35,6 +68,10 @@ export const CartContainer = () => {
         const fsDB = getFirestore()
         const ordenesCollection = fsDB.collection('orders')
 
+        pagarMP(pago).then(result => result.json()).then(value => {
+            setMpUrl(value.init_point)
+        })    
+
         ordenesCollection
             .add(order)
             .then(value => {
@@ -46,6 +83,7 @@ export const CartContainer = () => {
             })  
 
         updateStock(order)
+        
 
         setName('')
         setLastName('')
@@ -53,6 +91,7 @@ export const CartContainer = () => {
     }
 
     const updateStock = (order) => {
+        // eslint-disable-next-line array-callback-return
         order.items.map((elemento, indice) => {
             let id = elemento.item.id
             let amount = elemento.qty
@@ -69,6 +108,10 @@ export const CartContainer = () => {
             })
             
         })
+    }
+
+    const resetUrl = () => {
+        setMpUrl('')
     }
 
     useEffect(() => {
@@ -97,7 +140,7 @@ export const CartContainer = () => {
                                 <img src={x.item.image} alt={x.item.title} />
                             </div>
     
-                            <Link to={`/producto/${x.item.id}`}><h4>{x.item.title}</h4></Link>
+                            <Link to={`/producto/${x.item.productId}`}><h4>{x.item.title}</h4></Link>
     
                             <div className='cartContainer__productPrice'>
                                 <p>$ {x.item.price}</p>
@@ -124,6 +167,9 @@ export const CartContainer = () => {
 
                     {!orderId ? (
                     <form className='cartContainer__userInfo' onSubmit={(e) => createOrder(e)}>
+                        {cart.length !== 0 ?
+
+                        <>
                         <h3>Informacion Usuario</h3>
                         <div>
                             <input type='text' placeholder='Nombre...' value={name} onChange={e => setName(e.target.value)} required></input>
@@ -137,21 +183,41 @@ export const CartContainer = () => {
                             <input type='text' placeholder='Telefono...' value={phone} onChange={e => setPhone(e.target.value)} required></input>
                         </div>
 
+                        
                         <div>
-                            <button type='submit'>Realizar Compra</button>
+                            <button type='submit' className='cartContainer__buttonPrimary'>Crear Orden</button>
                         </div>
+                        
+                        </> 
+                        :
+                        <h3 style={{textAlign: 'center'}}>Agregue productos para continuar</h3> 
+                    }
                     </form>
                     ) : (
                         <div className='cartContainer__confirm'>
-                            <h2>Su compra se ha concretado</h2>
+                            <h2>Su orden se ha creado</h2>
                             <p>Comprobante N°: {orderId}</p>
                         </div>
                     )}
 
                     <div className='cartContainer__clear'>
-                        {!orderId ?
-                        <button className='cartContainer__clearButton' onClick={() => clearCart()}>Limpiar carrito</button> :
-                        <Link to='/'><button className='cartContainer__continueButton' style={{backgroundColor: 'green'}}>Seguir Comprando</button></Link>
+                        {!orderId ? 
+                        cart.length !== 0 &&
+                        <button className='cartContainer__clearButton' onClick={() => clearCart()}>Limpiar carrito</button> 
+                        
+                        :
+                        mpUrl ? 
+                        <a href={mpUrl} target='_blank' rel='noreferrer' onClick={resetUrl} style={{width: '100%'}}>
+                            <button className='cartContainer__buttonPrimary'>
+                                Pagar Orden
+                            </button>
+                        </a> 
+                        :
+                        <Link to='/' style={{width: '100%'}}>
+                            <button className='cartContainer__continueButton'>
+                                Continuar Comprando
+                            </button>
+                        </Link>
                         }
                     </div>
 

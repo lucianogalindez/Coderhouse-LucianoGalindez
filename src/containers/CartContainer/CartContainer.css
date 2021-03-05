@@ -87,7 +87,7 @@
     padding: 1rem;
 }
 
-.cartContainer__userInfo > div > button {
+.cartContainer__buttonPrimary {
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: 0.1rem #a4a4a4 solid;
@@ -102,6 +102,10 @@
     border: none;
     transition: all 0.2s ease-in;
     margin-top: 1rem;
+}
+
+.cartContainer__buttonPrimary:hover {
+    background-color: rgb(70, 70, 70);
 }
 
 .cartContainer__priceInfo > button:hover {
@@ -138,14 +142,21 @@
 }
 
 .cartContainer__continueButton {
-    padding: 0.4rem;
+    padding: 0.8rem;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    background-color: green;
+    background-color: rgb(2, 168, 2);
     font-weight: 400;
+    font-size: 1.2rem;
     outline: none;
     color: white;
+    width: 100%;
+    transition: all 0.2s ease-in;
+}
+
+.cartContainer__continueButton:hover {
+    background-color: darkgreen;
 }
 
 .cartContainer__userInfo {

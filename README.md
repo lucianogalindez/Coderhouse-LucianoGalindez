@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+ANIMATE ECOMMERCE APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La aplicacion que se muestra en el presente repositorio consiste en un sitio de ventas confeccionado a modo de ejemplo para el curso llevado a cabo por CODER HOUSE durante el primer trimestre del 2021
 
-## Available Scripts
+Components
 
-In the project directory, you can run:
+En la carpeta components podemos encontrar todos los componentes utilizados en el proyecto. Cada uno de ellos es clave para el correcto funcionamiento de la aplicacion y los mismos se encuentran impresos de las Screens
 
-### `npm start`
+-Cart Widget : Esta constituido por un icono de carrito importado desde MaterialUI
+-Footer: Como su nombre lo indica esta constituido por el footer de la aplicacion
+-Item: En este componente se dibuja al item correspondiente a la card dentro de itemList
+-ItemCount: Es un componente fundamental, se encarga de indicar las cantidades el item que se compraran y es aqui donde dicho item se guarda en el contexto para poder ser usado globalmente
+-ItemDetail: Vista personalizada del item que se selecciono desde ItemList
+-ItemList: En este componente se mapean todos los items contenidos en nuestra base de datos
+-Navbar: Este componente guarda la configuracion de nuestra barra de navegacion
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Containers
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+En esta carpeta se guardan las screens de nuestro proyecto. Tenemos 3:
 
-### `npm test`
+ItemListContainers: Vista del home de nuestra aplicacion
+ItemDetailContainer: Vista detallada del producto seleccionado
+CartContainer: Vista de nuestro carrito de compras, donde se puede tomar la decision de llevar a cabo la compra
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Context
 
-### `npm run build`
+En esta carpeta se encuentran los archivos que se encargan de configurar el contexto de nuestra aplicacion. Lo que permite poder utilizar datos y funciones de forma global
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Firebase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Guarda la configuracion con Firebase. Firebase nos permite contar con una base de datos dinamica, la cual podemos solicitar y modificar por medio de promesas. Lo anterior resulta sumamente util ya que posibila que la pagina se vuelva mas dinamica y se actulice a tiempo real. Asimismo, el sitio se encuentra en linea gracias a su hosting
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+MaterialUI
 
-### `npm run eject`
+Durante el proyecto se hizo uso en multiples ocasiones de materialUI para hacernos de iconos que mejoren la estatica de la misma
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+API MERCADOPAGO
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+El proyecto cuenta con el funcionamiento de la api de mercadopago. Es gracias a la misma que llegado al ultimo paso del proceso de compra, por medio de una peticion del tipo POST, nos devuelve un enlace que nos pertite dirigirnos a su pasarella de pago y concretar la orden creada.
