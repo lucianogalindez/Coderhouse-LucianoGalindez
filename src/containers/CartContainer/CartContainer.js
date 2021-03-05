@@ -20,7 +20,7 @@ export const CartContainer = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer TEST-959807999894080-090620-44560d8f0723d4a8d1895a07ceb383db-2875546'
+                'Authorization': `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`
             },
             body: JSON.stringify({
                 items: products/*[
@@ -47,8 +47,6 @@ export const CartContainer = () => {
                 unit_price: x.item.price
             }
         })
-
-        console.log(pago)
 
         let buyer = {
             name: name,

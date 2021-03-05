@@ -37,3 +37,7 @@ Durante el proyecto se hizo uso en multiples ocasiones de materialUI para hacern
 API MERCADOPAGO
 
 El proyecto cuenta con el funcionamiento de la api de mercadopago. Es gracias a la misma que llegado al ultimo paso del proceso de compra, por medio de una peticion del tipo POST, nos devuelve un enlace que nos pertite dirigirnos a su pasarella de pago y concretar la orden creada.
+
+.ENV
+
+Guardo los datos sensibles en dicho archivo. Como ser el ACCESS_TOKEN de mercadopago
